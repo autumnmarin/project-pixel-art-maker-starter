@@ -1,22 +1,28 @@
-// Select color input
-var colorPicker = document.getElementById("colorPicker").value;
-canvas.addEventListener("click", function(event) {
-  let color = document.getElementById("colorPicker").value;
-  event.target.style.backgroundColor = color;
-});
+//Declare global vars
+var canvas = document.getElementById("canvas");
 
-// Select size input
+//Declare size vars and event listener on submit
 var sizePicker = document.getElementById("sizePicker");
 sizePicker.addEventListener("submit", function(event) {
   event.preventDefault();
   makeGrid();
 });
 
-// When size is submitted by the user, call makeGrid()
+//Function
 function makeGrid() {
+  //Set height and width vars
   var inputHeight = document.getElementById("inputHeight").value;
   var inputWidth = document.getElementById("inputWidth").value;
-  var canvas = document.getElementById("canvas");
+
+  //Declare color var and event listener for color selection
+  canvas.addEventListener("click", function(event) {
+    if (event.target.nodeName === "TD") {
+      const color = document.getElementById("colorPicker").value;
+      event.target.style.backgroundColor = color;
+    }
+  });
+
+  //Draw table
   canvas.innerHTML = "";
   for (let x = 0; x < inputHeight; x++) {
     var row = document.createElement("tr");

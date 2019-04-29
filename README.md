@@ -1,5 +1,14 @@
 # Pixel Art Maker Project
 
+####Designs.js
+
+Declare global variables  
+Declare size variable with event listener  
+Function  
+ --set height and width vars  
+ --set color from user input  
+ --draw table
+
 ## Table of Contents
 
 - [Instructions](#instructions)
